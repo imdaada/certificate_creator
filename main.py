@@ -8,10 +8,10 @@ for paragraph in doc.paragraphs:
     for run in paragraph.runs:
         if run.text == "??":
             names = open('input/names.txt', encoding='utf-8')
-            run = run.clear()
             counter = 0
             for name in names:
                 name = name.strip()
+                run = run.clear()
                 print(name)
                 run.add_text(name)
                 doc.save(f'certificates/{name}.docx')
