@@ -8,7 +8,6 @@ for paragraph in doc.paragraphs:
         if run.text == "??":
             names = open('names.txt', encoding='utf-8')
             run = run.clear()
-            inst = "dssd"
             counter = 0
             for name in names:
                 name = name.strip()
