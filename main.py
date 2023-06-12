@@ -1,5 +1,6 @@
 import docx
 from docx2pdf import convert
+import os
 
 doc = docx.Document('example.docx')
 
@@ -15,6 +16,7 @@ for paragraph in doc.paragraphs:
                 run.add_text(name)
                 doc.save(f'{name}.docx')
                 convert(f"{name}.docx")
+                os.remove(f'{name}.docx')
                 counter += 1
             print(f"Созданы {counter} грамоты")
             names.close()
